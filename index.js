@@ -10,21 +10,19 @@ mongoose.connect(dburl);
 
 //SEARCH --------------------------------
 var Search = require('bing.search');
-var util = require('util');
-'t4tbKH6KcDinus26I5iSYOQSgbeE73JGFRbHpa85h8k'
 var search = new Search(process.env.SEARCHKEY);
 
  function mySearch(searchParams, offset, myCallbackSearch){
-
-search.images(searchParams,
-  {top: offset},
-  function(err, results) {
-      
-  //newArray with specified results
-      var newArray = results.map(function(obj){
-          var newObj = {url:obj.url, snippet:obj.title, thumbnail:obj.thumbnail.url, context:obj.sourceUrl};
-    return newObj;
-});
+        
+        search.images(searchParams,
+          {top: offset},
+          function(err, results) {
+              
+          //newArray with specified results
+              var newArray = results.map(function(obj){
+                  var newObj = {url:obj.url, snippet:obj.title, thumbnail:obj.thumbnail.url, context:obj.sourceUrl};
+            return newObj;
+        });
 
       
     myCallbackSearch(newArray);
