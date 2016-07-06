@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/michaelzap94/Img-Search-Abs-Layer#readme",
   "dependencies": {
+    "bing.search": "^1.0.1",
     "express": "^4.14.0",
     "mongoose": "^4.5.3"
   }
